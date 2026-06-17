@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BurProxy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="title">BurProxy</span>
+      <span class="badge" id="statusBadge">OFF</span>
+    </div>
+
+    <!-- Toggle -->
+    <div class="toggle-section">
+      <div class="toggle-label">
+        <span id="toggleText">Proxy Disabled</span>
+      </div>
+      <label class="toggle-switch" for="proxyToggle" aria-label="Toggle proxy">
+        <input type="checkbox" id="proxyToggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- Config -->
+    <div class="config">
+      <div class="config-row">
+        <label for="hostInput">Host</label>
+        <input type="text" id="hostInput" value="127.0.0.1" placeholder="127.0.0.1" spellcheck="false"/>
+      </div>
+      <div class="config-row">
+        <label for="portInput">Port</label>
+        <input type="number" id="portInput" value="8080" placeholder="8080" min="1" max="65535"/>
+      </div>
+    </div>
+
+    <!-- Apply Button -->
+    <button class="apply-btn" id="applyBtn">Apply Settings</button>
+
+    <!-- Status bar -->
+    <div class="status-bar" id="statusBar">
+      <span class="status-dot" id="statusDot"></span>
+      <span id="statusText">No proxy active</span>
+    </div>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
